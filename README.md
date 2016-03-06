@@ -17,7 +17,7 @@
 ## Please visit our [live application](https://demo.reactstarterkit.com/)
 - Alright, currently only a landing page...
 
-[![Join the chat at https://gitter.im/navacohen90/Click-a-Table](https://gitter.im/navacohen90/Click-a-Table)]
+[![Join the chat at https://gitter.im/navacohen90/Click-a-Table](https://badges.gitter.im/robi-y/seproject-team-template.svg)](navacohen90/Click-a-Table?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## [Issue Board](https://huboard.com/robi-y/seproject-team-template#/)
 
