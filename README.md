@@ -1,8 +1,18 @@
 # Click-a-Table
 
-A template1 repository with wiki for a team project at JCE's software engineering course
+האפליקציה שחוסכת זמן ,עצבים וטרחה. 
 
-![project logo (this one is taken from basecamp)](http://klipfolio.com/sites/default/files/integrations/basecamp.png)
+כמה פעמים תכננתם לצאת למסעדה , סוף סוף יוצאים מהבית ו......
+שוב מחכים למלצר, שוב מקוים לשולחן פנוי ...
+וכשכבר מתיישבים, מגלים שהתפריט איננו לטעמכם...
+מהיום הכל נעשה קל ופשוט עם 
+
+![project logo](https://github.com/navacohen90/Click-a-Table/blob/d0dc96321f21718fc61a15c2616efbf0530f0146/logo.png)
+
+אפליקציה פשוטה , חכמה ונוחה שתאפשר לכם עוד מהבית להזמין שולחן . במהלך שהותכם במסעדה לא תצטרכו לחפש את המלצר ! הוא יחפש אתכם! 
+ 
+כי שיש ClickATable  אז פשוט לוחצים על הכפתור 
+והמלצר אצלכם יחד עם המנה שהזמנתם ....
 
 ## Please visit our [live application](https://demo.reactstarterkit.com/)
 - Alright, currently only a landing page...
