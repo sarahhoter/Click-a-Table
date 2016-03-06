@@ -1,6 +1,6 @@
 # seproject-team-template
 
-A template repository with wiki for a team project at JCE's software engineering course
+A template1 repository with wiki for a team project at JCE's software engineering course
 
 ![project logo (this one is taken from basecamp)](http://klipfolio.com/sites/default/files/integrations/basecamp.png)
 
