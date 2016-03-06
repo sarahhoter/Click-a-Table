@@ -1,4 +1,4 @@
-# seproject-team-template
+# Click-a-Table
 
 A template1 repository with wiki for a team project at JCE's software engineering course
 
