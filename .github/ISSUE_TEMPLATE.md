@@ -31,4 +31,5 @@ Checklist, e.g.,:
 - [ ] git tag
 - [ ] Open page for next iteration 
   - [ ] Plan issues
+- [ ] All engineers fill the peer-review 
 - [ ] Submit (message in chat room, assign this issue to checker)
