@@ -4,6 +4,9 @@ A template repository with wiki for a team project at JCE's software engineering
 
 ![project logo (this one is taken from basecamp)](http://klipfolio.com/sites/default/files/integrations/basecamp.png)
 
+## Our Mission
+To make the world a better place by a new application that enables, tec...
+
 ## Please visit our [live application](https://demo.reactstarterkit.com/)
 - Alright, currently only a landing page...
 
