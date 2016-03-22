@@ -13,15 +13,21 @@ h1 {
 
 }
 
+.container_wrapper {
+    margin: 20px;
+}
+
 .container {
-    max-width: 600px;
+    max-width: 620px;
 }
 
 
 .menu-item-container {
-    width: 340px;
+    min-width: 340px;
+    min-height: 40px;
     direction: rtl;
     margin-bottom: 10px;
+    margin-top: 10px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -33,7 +39,9 @@ h1 {
 }
 
 .menu-item-container img{
-    max-width: 60px;
+    max-width: 60px;    
+    width: 50px;
+    height: 50px;
 }
 
 .menu-item {
@@ -76,7 +84,7 @@ h1 {
 }
 
 .course-item-img {
-    display: inline-block;
+    /*display: inline-block;*/
 }
 
 .course-item-img img {
@@ -90,4 +98,8 @@ h1 {
 
 .course-item-desc span {
     color: black;
+}
+
+.panel-footer {
+    margin-top: 50px;
 }
