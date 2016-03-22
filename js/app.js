@@ -1,4 +1,4 @@
-﻿/// <reference path="angular.js" />
+/// <reference path="angular.js" />
 
 var app = angular.module("myApp", ["ngRoute"]);
 
@@ -30,6 +30,10 @@ function ($routeProvider) {
         when('/course', {
             templateUrl: 'course.html',
             controller: 'CourseController'
+        }).
+        when('/courseDetail', {
+            templateUrl: 'courseDetail.html',
+            controller: 'CourseDetailController'
         }).
         otherwise({
             redirectTo: '/index'
