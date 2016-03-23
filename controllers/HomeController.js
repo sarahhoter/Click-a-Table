@@ -1,10 +1,10 @@
 ﻿function HomeController($scope) {
     $scope.items = [
-        { label: "Home", path: "#", imageSrc: "", isActive: true },
-        { label: "login", path: "#/login", imageSrc: "", isActive: false },
-        { label: "menu", path: "#/menu", imageSrc: "", isActive: false },
-        { label: "course type", path: "#/courseType", imageSrc: "", isActive: false },
-        { label: "course", path: "#/course", imageSrc: "", isActive: false },
-        { label: "order", path: "#/order", imageSrc: "", isActive: false }
+        { label: "דף הבית", path: "#", imageSrc: "", isActive: true },
+        { label: "התחבר", path: "#/login", imageSrc: "", isActive: false },
+        { label: "מסעדה", path: "#/menu", imageSrc: "", isActive: false },
+        { label: "סוגי תפריטים", path: "#/courseType", imageSrc: "", isActive: false },
+        { label: "תפריט מנות", path: "#/course", imageSrc: "", isActive: false },
+        { label: "סל הזמנה", path: "#/order", imageSrc: "", isActive: false }
     ];
 }
