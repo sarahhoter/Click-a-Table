@@ -10,7 +10,7 @@ Todo: delete all unnecessary text, add suitable labels (with priotity and estima
 - [ ] ...
 - [ ] Expected result
 
-## User Stoty Template
+## User Story Template
 - As a ...
 - I want ...
 - So that ...
@@ -24,7 +24,7 @@ Todo: delete all unnecessary text, add suitable labels (with priotity and estima
 Checklist, e.g.,:
 - [ ] Test feature scenarios
 - [ ] Update iteration page
-  - [ ] Iteration retospective
+  - [ ] Iteration retrospective
   - [ ] Client review
   - [ ] Update issues
   - [ ] Application of course materials
