@@ -15,7 +15,6 @@
 והמלצר אצלכם יחד עם המנה שהזמנתם ....
 
 ## Please visit our [live application](http://click-a-table.azurewebsites.net/)
-- Alright, currently only a landing page...
 
 [![Join the chat at https://gitter.im/navacohen90/Click-a-Table](https://badges.gitter.im/robi-y/seproject-team-template.svg)](https://gitter.im/navacohen90/Click-a-Table?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -24,9 +23,9 @@
 ## Disclaimer
 This project is developed as part of the requirements for a [software engineering course](https://github.com/jce-il/se-class/wiki) at the software engineering department - [Azrieli College of Engineering](http://www.jce.ac.il/), Jerusalem, Israel.
 
-Please visit our wiki for furthur project info: 
+Please visit our wiki for further project info: 
 
-### [User Manual](../../wiki/user-manual) (empty)
+### [User Manual](../../wiki/user-manual)
 
 ### [Team Page](../../wiki/team)
 
