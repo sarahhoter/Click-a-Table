@@ -1,11 +1,11 @@
 Todo: delete all unnecessary text, add suitable labels (with priotity and estimation), milestone, assignee
 ## Feature Template
 
-### Related Issues/Tasks
+#### Related Issues/Tasks
 - [ ] #1
 - [ ] #2
 
-### Scenario (test)
+#### Scenario (test)
 - [ ] Step 1
 - [ ] ...
 - [ ] Expected result
@@ -16,9 +16,9 @@ Todo: delete all unnecessary text, add suitable labels (with priotity and estima
 - So that ...
 
 ## Bug Template
-### Expected behavior
-### Actual behavior
-### Steps to reproduce the behavior
+#### Expected behavior
+#### Actual behavior
+#### Steps to reproduce the behavior
 
 ## Project Submission Template
 #### Iteration page: [here](../wiki/iter-6.md)
@@ -35,4 +35,7 @@ Todo: delete all unnecessary text, add suitable labels (with priotity and estima
   - [ ] Select stories and plan issues
   - [ ] Test scenarios
 - [ ] All engineers filled peer-review 
-- [ ] Submitted (announcement in chat room, assign this issue to checker)
+- [ ] Submitted
+  - [ ] Announcement in chat room
+  - [ ] Assign this issue to checker
+  - [ ] Register for a review meeting
