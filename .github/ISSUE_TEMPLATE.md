@@ -21,15 +21,18 @@ Todo: delete all unnecessary text, add suitable labels (with priotity and estima
 ### Steps to reproduce the behavior
 
 ## Project Submission Template
-Checklist, e.g.,:
-- [ ] Test feature scenarios
-- [ ] Update iteration page
+#### Iteration page: [here](../wiki/iter-6.md)
+#### Checklist, e.g.,:
+- [ ] Feature scenarios/tests passing
+- [ ] Iteration page updated, including:
   - [ ] Iteration retrospective
   - [ ] Client review
-  - [ ] Update issues
-  - [ ] Application of course materials
+  - [ ] Issues updates
+  - [ ] Section on application of course materials
 - [ ] git tag
-- [ ] Open page for next iteration 
-  - [ ] Plan issues
-- [ ] All engineers fill the peer-review 
-- [ ] Submit (message in chat room, assign this issue to checker)
+- [ ] Next iteration:
+  - [ ] Open page
+  - [ ] Select stories and plan issues
+  - [ ] Test scenarios
+- [ ] All engineers filled peer-review 
+- [ ] Submitted (announcement in chat room, assign this issue to checker)
