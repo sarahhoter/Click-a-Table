@@ -36,8 +36,8 @@ Please visit our wiki for further project info:
 - [Software Design Specification](../../wiki/sds)
 
 ### Iteration Pages
-- [Iteration 0 - ZFR](../../wiki/iter0-zfr)
-- [Iteration 1 - MVP]()
+- [Iteration 0 - ZFR](../../wiki/Iter-0-ZFR)
+- [Iteration 1 - MVP](../../wiki/Iter-1---MVP)
 - [Iteration 2 - Feature X]()
 - [Iteration 3 - Feature Y]()
 - [Iteration 4 - Feature Z]()
