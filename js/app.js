@@ -13,27 +13,27 @@ app.config(['$routeProvider',
 function ($routeProvider) {
     $routeProvider.
         when('/login', {
-            templateUrl: 'login.html',
+            templateUrl: 'views/login.html',
             controller: 'LoginController'
         }).
         when('/order', {
-            templateUrl: 'order.html',
+            templateUrl: 'views/order.html',
             controller: 'OrderController'
         }).
         when('/menu', {
-            templateUrl: 'menu.html',
+            templateUrl: 'views/menu.html',
             controller: 'MenuController'
         }).
         when('/courseType', {
-            templateUrl: 'courseType.html',
+            templateUrl: 'views/courseType.html',
             controller: 'CourseTypeController'
         }).
         when('/course', {
-            templateUrl: 'course.html',
+            templateUrl: 'views/course.html',
             controller: 'CourseController'
         }).
         when('/courseDetail', {
-            templateUrl: 'courseDetail.html',
+            templateUrl: 'views/courseDetail.html',
             controller: 'CourseDetailController'
         }).
         otherwise({
