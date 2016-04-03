@@ -27,6 +27,8 @@ Please visit our wiki for further project info:
 
 ### [User Manual](../../wiki/user-manual)
 
+### [Developer Guide](../../wiki/Developer-Guide)
+
 ### [Team Page](../../wiki/team)
 
 ### Project Documents
