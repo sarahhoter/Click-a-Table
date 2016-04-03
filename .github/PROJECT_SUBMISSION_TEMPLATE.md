@@ -1,25 +1,3 @@
-Todo: delete all unnecessary text, add suitable labels (with priotity and estimation), milestone, assignee
-## Feature Template
-
-#### Related Issues/Tasks
-- [ ] #1
-- [ ] #2
-
-#### Scenario (test)
-- [ ] Step 1
-- [ ] ...
-- [ ] Expected result
-
-## User Story Template
-- As a ...
-- I want ...
-- So that ...
-
-## Bug Template
-#### Expected behavior
-#### Actual behavior
-#### Steps to reproduce the behavior
-
 ## Project Submission Template
 #### Iteration page: [here](../wiki/iter-6.md)
 #### Checklist, e.g.,:
