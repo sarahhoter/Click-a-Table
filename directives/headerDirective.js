@@ -3,7 +3,7 @@ app.directive('header', function () {
     return {
 
         restrict: 'E',
-        templateUrl: "../header.html",
+        templateUrl: "../src/header.html",
         scope: {
             items: "="
         },
