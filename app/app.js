@@ -7,6 +7,7 @@ app.controller("OrderController", ["$scope", OrderController]);
 app.controller("MenuController", ["$scope", MenuController]);
 app.controller("CourseTypeController", ["$scope", CourseTypeController]);
 app.controller("CourseController", ["$scope", CourseController]);
+app.controller("CourseDetailController", ["$scope", CourseDetailController]);
 app.controller("HomeController", ["$scope", HomeController]);
 
 app.config(['$routeProvider',

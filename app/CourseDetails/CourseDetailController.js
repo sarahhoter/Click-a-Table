@@ -1,4 +1,4 @@
-﻿function CourseController($scope)
+﻿function CourseDetailController($scope)
 {
 
 }
