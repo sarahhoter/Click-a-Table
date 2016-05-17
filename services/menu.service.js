@@ -4,8 +4,10 @@ var Schema = mongoose.Schema; //to create Schema
 var connection = mongoose.createConnection(config.connectionString);//connect to the db server
 //Schema = document
 var menu = new Schema({
-    name:  String,
-    sureName: String
+    id:  Number,
+    name: String,
+    image: String,
+    parentId: Number
 });
 
 //model = collection

@@ -4,7 +4,7 @@ var app = angular.module("myApp", ["ngRoute"]);
 
 app.controller("LoginController", ["$scope", LoginController]);
 app.controller("OrderController", ["$scope", OrderController]);
-app.controller("MenuController", ["$scope", MenuController]);
+app.controller("MenuController", ["$scope","$http", MenuController]);
 app.controller("CourseTypeController", ["$scope", CourseTypeController]);
 app.controller("CourseController", ["$scope", CourseController]);
 app.controller("CourseDetailController", ["$scope", CourseDetailController]);
@@ -14,27 +14,27 @@ app.config(['$routeProvider',
 function ($routeProvider) {
     $routeProvider.
         when('/login', {
-            templateUrl: 'app/Login/login.html',
+            templateUrl: '/app/Login/login.html',
             controller: 'LoginController'
         }).
         when('/order', {
-            templateUrl: 'app/Order/order.html',
+            templateUrl: '/app/Order/order.html',
             controller: 'OrderController'
         }).
         when('/menu', {
-            templateUrl: 'app/Menu/menu.html',
+            templateUrl: '/app/Menu/menu.html',
             controller: 'MenuController'
         }).
         when('/courseType', {
-            templateUrl: 'app/CourseType/courseType.html',
+            templateUrl: '/app/CourseType/courseType.html',
             controller: 'CourseTypeController'
         }).
         when('/course', {
-            templateUrl: 'app/Course/course.html',
+            templateUrl: '/app/Course/course.html',
             controller: 'CourseController'
         }).
         when('/courseDetail', {
-            templateUrl: 'app/CourseDetails/courseDetail.html',
+            templateUrl: '/app/CourseDetails/courseDetail.html',
             controller: 'CourseDetailController'
         }).
         otherwise({
