@@ -1,34 +1,11 @@
-<div class="menu-item-container">
-    <div class="menu-item">
-        <a href="#/courseType">
-            <img src="app/css/img/book.png" />
-            <span>תפריט</span>
-        </a>
-    </div>
-    <div class="menu-item">
-        <a href="#/courseType">
-            <img src="app/css/img/book2.png" />
-            <span>קינוחים</span>
-        </a>
-    </div>
-</div>
-
-<div class="menu-item-container">
-    <div class="menu-item-second">
-        <a href="#/courseType">
-            <img src="app/css/img/drink.png" />
-            <span>שתיה</span>
-        </a>
-    </div>
-    <div class="menu-item-second">
-        <a href="#/order">
-            <img src="app/css/img/book3.png" />
-            <span>מה הזמנתי</span>
-        </a>
-    </div>
+<div class="menu-item" ng-repeat="item in menu track by $index">
+    <a ng-href="#/courseType">
+        <img src="/app/css/img/{{item.image}}" />
+        <span>{{item.name}}</span>
+    </a>
 </div>
 
 <div class="menu-item-container" style="background-color: red">
-    <img src="app/css/img/table.png" />
+    <img src="/app/css/img/table.png" />
     <span>שולחן מס' 5</span>
 </div>
