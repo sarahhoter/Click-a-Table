@@ -3,6 +3,7 @@ var express = require('express'); //for routing
 var app = express(); //init the server
 var config = require('config.json');
 var path = require('path');
+var port = process.env.PORT || 3000;
 
 //initalization for using POST calls
 var bodyParser = require('body-parser');
@@ -21,6 +22,6 @@ app.get('/', function (req, res) {
 });
 
 //listen on port
-app.listen(3000, function(){
-    console.log("listening on port 3000");
+app.listen(port, function(){
+   console.log('Server listening at http://' + server.address().address + ':' + server.address().port);
 });
