@@ -1,25 +1,18 @@
 
-    <a href="#/courseDetail" class="btn btn-default">
+<div ng-repeat="course in courses track by $index">
+    <br/>
+    <a ng-href="#/courseDetails{{course.path}}" class="btn btn-default">
         <div class="menu-item-container">
             <div class="course-item-img">
-                <img src="/app/css/img/food1.jpg" />
+                <img src="css/img/{{course.image}}" />
             </div>
-            <div class="course-item-desc">               
-                    שוקי עוף מתובלים ברוטב צ'לי ופלפל שטה  כולל תוספת               
+            <div class="course-item-desc">
+                {{course.label}}
             </div>
         </div>
     </a>
+</div>
 
-<a href="#/courseDetail" class="btn btn-default">
-    <div class="menu-item-container">
-        <div class="course-item-img">
-            <img src="/app/css/img/food2.jpg" />
-        </div>
-        <div class="course-item-desc">
-            סושי במילוי סלמון
-        </div>
-    </div>
-</a>
 
 <br/>
 <br />

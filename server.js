@@ -14,14 +14,14 @@ app.use(bodyParser.json()); //read json data
 //app.use('/app', require('./controllers/app.controller'));
 app.use('/app', express.static('app'));
 app.use('/api/menu', require('./controllers/api/menu.controller'));
+app.use('/api/courses', require('./controllers/api/course.controller'));
 
 // make '/app' default route
 app.get('/', function (req, res) {
-    //res.sendFile(path.join(__dirname + "/app/index.html"));
     return res.redirect('/app');
 });
 
 //listen on port
 app.listen(port, function(){
-   console.log('Server listening at http://' + server.address().address + ':' + server.address().port);
+   console.log('Server listening at http://');// + server.address().address + ':' + server.address().port);
 });
