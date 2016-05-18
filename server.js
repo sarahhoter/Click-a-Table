@@ -11,10 +11,9 @@ app.use(bodyParser.urlencoded({ extended: false }));//read URL encoded
 app.use(bodyParser.json()); //read json data
 
 //static routes init
-//app.use('/app', require('./controllers/app.controller'));
 app.use('/app', express.static('app'));
-app.use('/api/menu', require('./controllers/api/menu.controller'));
-app.use('/api/courses', require('./controllers/api/course.controller'));
+app.use('/api/menu', require('./controllers/menu.controller'));
+app.use('/api/courses', require('./controllers/course.controller'));
 
 // make '/app' default route
 app.get('/', function (req, res) {
