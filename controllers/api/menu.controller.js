@@ -46,11 +46,11 @@ function init() {
 }
 
 function getMenu(req, res) {
-
-        Menu.count({}, function( err, count){
+    init();
+        /*Menu.count({}, function( err, count){
            if (count == 0)
                init();
-        });
+        });*/
 
 
     //find all menu items in db
