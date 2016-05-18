@@ -4,7 +4,6 @@ var router = express.Router();
 var mongoose = require('mongoose'); //get DB
 var Schema = mongoose.Schema; //to create Schema
 var connection = mongoose.createConnection(config.connectionString);//connect to the db server
-var courseService = require('./../../services/course.service');
 
 // routes
 router.post('/init', initData);
