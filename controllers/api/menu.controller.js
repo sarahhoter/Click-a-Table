@@ -46,8 +46,12 @@ function init() {
 }
 
 function getMenu(req, res) {
-    if (Menu.count({}) == 0)
-		init();
+
+        Menu.count({}, function( err, count){
+           if (count == 0)
+               init();
+        });
+
 
     //find all menu items in db
     Menu.find({ parentId: 0 }, function(err, menu) {

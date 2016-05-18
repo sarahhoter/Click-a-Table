@@ -2,39 +2,39 @@
 
 var app = angular.module("myApp", ["ngRoute"]);
 
-app.controller("LoginController", ["$scope", LoginController]);
-app.controller("OrderController", ["$scope", OrderController]);
-app.controller("MenuController", ["$scope","$http", MenuController]);
-app.controller("CourseTypeController", ["$scope", CourseTypeController]);
-app.controller("CourseController", ["$scope", CourseController]);
-app.controller("CourseDetailController", ["$scope", CourseDetailController]);
-app.controller("HomeController", ["$scope", HomeController]);
+app.controller("LoginController", ["$scope", "$http", LoginController]);
+app.controller("OrderController", ["$scope", "$http", OrderController]);
+app.controller("MenuController", ["$scope", "$http", MenuController]);
+app.controller("CourseTypeController", ["$scope", "$http", CourseTypeController]);
+app.controller("CourseController", ["$scope", "$routeParams", "$http", CourseController]);
+app.controller("CourseDetailController", ["$scope", "$http", CourseDetailController]);
+app.controller("HomeController", ["$scope", "$http", HomeController]);
 
 app.config(['$routeProvider',
 function ($routeProvider) {
     $routeProvider.
         when('/login', {
-            templateUrl: '/app/Login/login.html',
+            templateUrl: 'Login/login.html',
             controller: 'LoginController'
         }).
         when('/order', {
-            templateUrl: '/app/Order/order.html',
+            templateUrl: 'Order/order.html',
             controller: 'OrderController'
         }).
         when('/menu', {
-            templateUrl: '/app/Menu/menu.html',
+            templateUrl: 'Menu/menu.html',
             controller: 'MenuController'
         }).
         when('/courseType', {
-            templateUrl: '/app/CourseType/courseType.html',
+            templateUrl: 'CourseType/courseType.html',
             controller: 'CourseTypeController'
         }).
-        when('/course', {
-            templateUrl: '/app/Course/course.html',
+        when('/course/:courseTypeId', {
+            templateUrl: 'Course/course.html',
             controller: 'CourseController'
         }).
         when('/courseDetail', {
-            templateUrl: '/app/CourseDetails/courseDetail.html',
+            templateUrl: 'CourseDetails/courseDetail.html',
             controller: 'CourseDetailController'
         }).
         otherwise({
