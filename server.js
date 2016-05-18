@@ -22,6 +22,6 @@ app.get('/', function (req, res) {
 });
 
 //listen on port
-app.listen(port, function(){
-   console.log('Server listening at http://');// + server.address().address + ':' + server.address().port);
+var server = app.listen(port, function(){
+   console.log('Server listening at http://' + server.address().address + ':' + server.address().port);
 });
