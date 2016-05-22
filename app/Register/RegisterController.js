@@ -3,10 +3,15 @@
     $scope.createUser = function () {
         $http.post('/auth/register', $scope.user)
             .success(function (response) {
-                console.log(response);
+                if(responslogine.isAdded == true)
+                    window.location.replace('#/index');
+                //else
+                //    errMessage.value 
+                    
             })
             .error(function (error) {
                 console.log('Error: ' + error);
+
         });
     }
 }

@@ -103,3 +103,7 @@ h1 {
 .panel-footer {
     margin-top: 50px;
 }
+
+.errMessage {
+    color: red;
+}
