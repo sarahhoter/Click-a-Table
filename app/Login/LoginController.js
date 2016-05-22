@@ -1,3 +1,4 @@
-﻿function LoginController($scope) {
+﻿function LoginController($scope, $http) {
 
+    
 }

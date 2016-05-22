@@ -3,6 +3,7 @@
 var app = angular.module("myApp", ["ngRoute"]);
 
 app.controller("LoginController", ["$scope", "$http", LoginController]);
+app.controller("RegisterController", ["$scope", "$http", RegisterController]);
 app.controller("OrderController", ["$scope", "$http", OrderController]);
 app.controller("MenuController", ["$scope", "$http", MenuController]);
 app.controller("CourseTypeController", ["$scope", "$http", CourseTypeController]);
@@ -16,6 +17,10 @@ function ($routeProvider) {
         when('/login', {
             templateUrl: 'Login/login.html',
             controller: 'LoginController'
+        }).
+        when('/register', {
+            templateUrl: 'Register/register.html',
+            controller: 'RegisterController'
         }).
         when('/order', {
             templateUrl: 'Order/order.html',
@@ -41,6 +46,9 @@ function ($routeProvider) {
             redirectTo: '/index'
         });
 }]);
+
+
+
 /*
 app.service('menuService', function($http){
     var getAllUsers = function () {

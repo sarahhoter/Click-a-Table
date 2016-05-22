@@ -4,7 +4,6 @@ var app = express(); //init the server
 var config = require('config.json');
 var path = require('path');
 var port = process.env.PORT || 3000;
-
 //initalization for using POST calls
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));//read URL encoded
@@ -12,10 +11,11 @@ app.use(bodyParser.json()); //read json data
 
 //static routes init
 //app.use('/app', require('./controllers/app.controller'));
+app.use('/auth', require('./controllers/auth.controller'));
 app.use('/app', express.static('app'));
 app.use('/api/menu', require('./controllers/api/menu.controller'));
 app.use('/api/courses', require('./controllers/api/course.controller'));
-
+//app.use('/login', require('./controllers/login.controller'));
 // make '/app' default route
 app.get('/', function (req, res) {
     return res.redirect('/app');
