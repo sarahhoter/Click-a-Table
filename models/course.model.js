@@ -2,7 +2,7 @@
 var Schema = mongoose.Schema; //to create Schema
 
 var courseSchema = new Schema({
-    id : Number,
+    courseId : Number,
     courseTypeId : Number,
     label : String,
     image : String

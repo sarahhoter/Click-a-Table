@@ -2,7 +2,6 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose'); //get DB
-var Schema = mongoose.Schema; //to create Schema
 var connection = mongoose.createConnection(config.connectionString);//connect to the db server
 
 // routes
@@ -16,7 +15,7 @@ var courseSchema = require('../models/course.model');
 var Course = connection.model('Course', courseSchema);
 
 function initData() {
-    Course.update({id: 3}, {courseTypeId: 1, label: "עוף3", image: "food1.jpg"},
+    Course.update({courseId: 3}, {courseTypeId: 1, label: "עוף3", image: "food1.jpg"},
         {upsert: true}, //insert if not exists
         function(err, numAffected) {
             if (err)
@@ -24,7 +23,7 @@ function initData() {
         }
     );
 
-    Course.update({id: 4}, {courseTypeId: 1, label: "עוף1", image: "food2.jpg"},
+    Course.update({courseId: 4}, {courseTypeId: 1, label: "עוף1", image: "food2.jpg"},
         {upsert: true}, //insert if not exists
         function(err, numAffected) {
             if (err)
@@ -32,7 +31,7 @@ function initData() {
         }
     );
 
-    Course.update({id: 5}, {courseTypeId: 2, label: "סושי", image: "food2.jpg"},
+    Course.update({courseId: 5}, {courseTypeId: 2, label: "סושי", image: "food2.jpg"},
         {upsert: true}, //insert if not exists
         function(err, numAffected) {
             if (err)
