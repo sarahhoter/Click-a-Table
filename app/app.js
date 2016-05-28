@@ -8,7 +8,7 @@ app.controller("OrderController", ["$scope", "$http", OrderController]);
 app.controller("MenuController", ["$scope", "$http", MenuController]);
 app.controller("CourseTypeController", ["$scope", "$http", CourseTypeController]);
 app.controller("CourseController", ["$scope", "$routeParams", "$http", CourseController]);
-app.controller("CourseDetailController", ["$scope", "$http", CourseDetailController]);
+app.controller("CourseDetailController", ["$scope", "$routeParams", "$http", CourseDetailController]);
 app.controller("HomeController", ["$scope", "$http", HomeController]);
 
 app.config(['$routeProvider',
@@ -38,7 +38,7 @@ function ($routeProvider) {
             templateUrl: 'Course/course.html',
             controller: 'CourseController'
         }).
-        when('/courseDetail', {
+        when('/courseDetails/:courseId', {
             templateUrl: 'CourseDetails/courseDetail.html',
             controller: 'CourseDetailController'
         }).

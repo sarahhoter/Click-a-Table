@@ -2,7 +2,7 @@
     $scope.courses = {};
     var id = ($routeParams.courseTypeId || "");
 
-    $http.get('/api/courses/' + id)
+    $http.get('/courses/' + id)
         .success(function(data) {
             $scope.courses = data;
             console.log(data);

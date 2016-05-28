@@ -1,4 +1,4 @@
-﻿var config = require('./../../config.json');
+﻿var config = require('./../config.json');
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose'); //get DB
@@ -12,14 +12,8 @@ router.get('/:courseTypeId', getByCourseItem);
 
 module.exports = router;
 
-var course = new Schema({
-    id : Number,
-    courseTypeId : Number,
-    label : String,
-    image : String
-});
-
-var Course = connection.model('Course', course);
+var courseSchema = require('../models/course.model');
+var Course = connection.model('Course', courseSchema);
 
 function initData() {
     Course.update({id: 3}, {courseTypeId: 1, label: "עוף3", image: "food1.jpg"},
