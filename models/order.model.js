@@ -2,7 +2,7 @@
 var Schema = mongoose.Schema;
 
 var orderSchema = new Schema({
-    orderId: Number,
+    id: Number,
     userId: Number,
     restaurantId: Number,
     tableNo: Number,

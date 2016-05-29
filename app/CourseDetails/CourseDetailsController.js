@@ -1,4 +1,4 @@
-﻿function CourseDetailController($scope, $routeParams, $http)
+﻿function CourseDetailsController($scope, $routeParams, $http)
 {
     $scope.orderCourse = orderCourse;
 
@@ -9,6 +9,8 @@
         $http.post('/order/addOrderItem', course)
             .success(function (response) {
                 if (response.isOrdered == true) {
+                    $scope.message = response.messages;
+                } else {
                     $scope.message = response.messages;
                 }
             })
