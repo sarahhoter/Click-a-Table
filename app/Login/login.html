@@ -3,17 +3,19 @@
         <div class="row">        
             <label>:שם משתמש</label>        
             <input ng-model="user.userName" class="form-control" name="userName" ng-required="true" />
-            <span ng-show="myForm.userName.$dirty && myForm.userName.$error.required">this is required</span>
+            <span class="errMessage" ng-show="myForm.userName.$dirty && myForm.userName.$error.required">This field is required</span>
         </div>
         <div class="row">
             <label>:סיסמא</label> 
             <input type="password" ng-model="user.password" class="form-control" name="password" ng-required="user.userName != ''" />
-            <span ng-show="myForm.password.$dirty && myForm.password.$error.required">this is required</span>
+            <span class="errMessage" ng-show="myForm.password.$dirty && myForm.password.$error.required">This field is required</span>
         </div>
         <br/>
+        <span class="{{result.class}}">{{result.message}}</span>
+        <br />
+        <br />
         <button ng-click="login()" class="btn btn-primary">התחבר</button>
         <a href="#/register" class="btn btn-link">משתמש חדש</a>
-
-            
+        
     </div>
 </div>

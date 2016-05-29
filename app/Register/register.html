@@ -3,31 +3,33 @@
             <div class="row">        
                 <label>:שם פרטי</label>        
                 <input ng-model="user.firstName" class="form-control" name="firstName" ng-required="true" />
-                <span ng-show="myForm.firstName.$dirty && myForm.firstName.$error.required">this is required</span>
+                <span class="errMessage" ng-show="myForm.firstName.$dirty && myForm.firstName.$error.required">This field is required</span>
             </div>
             <div class="row">        
                 <label>:שם משפחה</label>        
                 <input ng-model="user.lastName" class="form-control" name="lastName" ng-required="true" />
-                <span ng-show="myForm.lastName.$dirty && myForm.lastName.$error.required">this is required</span>
+                <span class="errMessage" ng-show="myForm.lastName.$dirty && myForm.lastName.$error.required">This field is required</span>
             </div>
             <div class="row">        
                 <label>:שם משתמש</label>        
                 <input ng-model="user.userName" class="form-control" name="userName" ng-required="true" />
-                <span ng-show="myForm.userName.$dirty && myForm.userName.$error.required">this is required</span>
+                <span class="errMessage" ng-show="myForm.userName.$dirty && myForm.userName.$error.required">This field is required</span>
             </div>
             <div class="row">
                 <label>:סיסמא</label> 
                 <input type="password" ng-model="user.password" class="form-control" name="password" ng-required="user.userName != ''" />
-                <span ng-show="myForm.password.$dirty && myForm.password.$error.required">this is required</span>
+                <span class="errMessage" ng-show="myForm.password.$dirty && myForm.password.$error.required">This field is required</span>
             </div>
             <div class="row">
                 <label>:א-מייל</label> 
-                <input ng-model="user.email" class="form-control" name="email" ng-required="user.email != ''" />
-                <span ng-show="myForm.email.$dirty && myForm.email.$error.required">this is required</span>
-                <span ng-show="myForm.email.$invalid">Valid email address required</span>
+                <input ng-model="user.email" type="email"  class="form-control" name="email" ng-required="user.email != ''" />
+                <span class="errMessage" ng-show="myForm.email.$dirty && myForm.email.$error.required">This field is required. </span>
+                <span class="errMessage" ng-show="myForm.email.$dirty && myForm.email.$error.email">Valid email address required</span>
             </div>
             <br/>
-            <span id="errMessage" class="errMessage"></span>
+            <span class="{{result.class}}">{{result.message}}</span>
+            <br />
+            <br />
             <button ng-click="createUser()" class="btn btn-primary">הירשם</button>
             <a href="#/login" class="btn btn-link">ביטול</a>
 
