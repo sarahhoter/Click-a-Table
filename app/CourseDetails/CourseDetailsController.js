@@ -5,7 +5,7 @@
     
     var courseId = ($routeParams.courseId || "");
 
-    $http.get('/api/courses/details/' + courseId)
+    $http.get('/courses/details/' + courseId)
         .success(function(data) {
             $scope.course = data[0];
             console.log(data);
