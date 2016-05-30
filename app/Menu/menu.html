@@ -1,8 +1,10 @@
-<div class="menu-item" ng-repeat="item in menu track by $index">
-    <a ng-href="#/courseType">
-        <img src="css/img/{{item.image}}" />
-        <span>{{item.name}}</span>
-    </a>
+<div class="menu-items">
+    <div class="menu-item" ng-repeat="item in menu track by $index">
+        <a ng-href="#/courseType">
+            <img src="css/img/{{item.image}}" />
+            <span>{{item.name}}</span>
+        </a>
+    </div>
 </div>
 
 <div class="menu-item-container" style="background-color: red">
