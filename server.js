@@ -11,10 +11,12 @@ app.use(bodyParser.json()); //read json data
 
 //static routes init
 //app.use('/app', require('./controllers/app.controller'));
-app.use('/auth', require('./controllers/auth.controller'));
 app.use('/app', express.static('app'));
+
+app.use('/auth', require('./controllers/auth.controller'));
 app.use('/api/menu', require('./controllers/api/menu.controller'));
-app.use('/api/courses', require('./controllers/api/course.controller'));
+app.use('/courses', require('./controllers/course.controller'));
+app.use('/order', require('./controllers/order.controller'));
 //app.use('/login', require('./controllers/login.controller'));
 // make '/app' default route
 app.get('/', function (req, res) {

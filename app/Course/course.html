@@ -1,7 +1,7 @@
 
 <div ng-repeat="course in courses track by $index">
     <br/>
-    <a ng-href="#/courseDetails{{course.path}}" class="btn btn-default">
+    <a ng-href="#/courseDetails/{{course.courseId}}" class="btn btn-default">
         <div class="menu-item-container">
             <div class="course-item-img">
                 <img src="css/img/{{course.image}}" />
@@ -16,4 +16,4 @@
 
 <br/>
 <br />
-<a href="#/courseType" class="btn btn-info">חזור לתפריט מנות</a>
+<a href="#/courseType/" class="btn btn-info">חזור לתפריט מנות</a>

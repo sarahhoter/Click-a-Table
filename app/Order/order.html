@@ -16,3 +16,19 @@
 <div class="order-total">
     <div>סך הכל: 114</div>
 </div>
+
+<course courses="courses"></course>
+
+<div ng-repeat="course in courses track by $index">
+    <br/>
+    <a ng-href="#/courseDetails/{{course.id}}" class="btn btn-default">
+        <div class="menu-item-container">
+            <div class="course-item-img">
+                <img src="css/img/{{course.image}}" />
+            </div>
+            <div class="course-item-desc">
+                {{course.label}}
+            </div>
+        </div>
+    </a>
+</div>

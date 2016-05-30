@@ -8,7 +8,7 @@ app.controller("OrderController", ["$scope", "$http", OrderController]);
 app.controller("MenuController", ["$scope", "$http", MenuController]);
 app.controller("CourseTypeController", ["$scope", "$http", CourseTypeController]);
 app.controller("CourseController", ["$scope", "$routeParams", "$http", CourseController]);
-app.controller("CourseDetailController", ["$scope", "$http", CourseDetailController]);
+app.controller("CourseDetailsController", ["$scope", "$routeParams", "$http", CourseDetailsController]);
 app.controller("HomeController", ["$scope", "$http", HomeController]);
 
 app.config(['$routeProvider',
@@ -38,9 +38,9 @@ function ($routeProvider) {
             templateUrl: 'Course/course.html',
             controller: 'CourseController'
         }).
-        when('/courseDetail', {
-            templateUrl: 'CourseDetails/courseDetail.html',
-            controller: 'CourseDetailController'
+        when('/courseDetails/:courseId', {
+            templateUrl: 'CourseDetails/courseDetails.html',
+            controller: 'CourseDetailsController'
         }).
         otherwise({
             redirectTo: '/index'
