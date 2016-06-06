@@ -17,7 +17,7 @@
     <script src="Menu/MenuController.js"></script>
     <script src="CourseType/CourseTypeController.js"></script>
     <script src="Course/CourseController.js"></script>
-    <script src="CourseDetails/CourseDetailsController.js"></script>
+    <script src="CourseDetails/CourseDetailController.js"></script>
     <script src="Home/HomeController.js"></script>
       
     <script src="app.js"></script>
@@ -25,14 +25,12 @@
 </head>
 <body ng-app="myApp">
     <div ng-controller="HomeController">
+        
 
         <header items="items"></header>
-
+        <span class="">{{session.user.firstName}} {{session.user.lastName}}</span>
         <div class="container" ng-view></div>
-       <nav class="navbar-fixed-bottom">
-            <span>All rights reserved  </span>
-        </nav>
+        <footer>All rights reserved</footer>
     </div>
 </body>
 </html>
-
