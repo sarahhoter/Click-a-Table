@@ -7,7 +7,7 @@ app.directive('header', function () {
         scope: {
             items: "="
         },
-        controller: ["$scope", function ($scope) {
+        controller: ["$scope", "$http", function ($scope, $http) {
 
             $scope.setActive = function (index) {
 
@@ -16,6 +16,21 @@ app.directive('header', function () {
                 });
 
                 $scope.items[index].isActive = true;
+            }
+
+            $scope.menuClicked = function (itemOnClick) {
+                if (itemOnClick == "logout") {
+                    $http.post('/auth/logout')
+                        .success(function (response) {
+                            window.location.reload();
+
+                        })
+                        .error(function (error) {
+                            console.log('Error: ' + error);
+
+                        });
+                }
+
             }
 
         }]

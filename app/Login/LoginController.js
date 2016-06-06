@@ -6,11 +6,13 @@
             .success(function (response) {
                 $scope.result = response;
                 console.log(response);
-                if (response.isLogged == true)
+                if (response.isLogged == true) {
+                    window.location.reload();
                     window.location.replace('#/index');
+                }
                 else
                     $scope.result.class = "errMessage";
-                
+
 
             })
             .error(function (error) {
@@ -18,5 +20,5 @@
 
             });
     }
-    
+
 }

@@ -9,6 +9,12 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));//read URL encoded
 app.use(bodyParser.json()); //read json data
 
+var session = require('express-session');
+app.use(session({
+    secret: "hashsecret", resave: true,
+    saveUninitialized: true
+}));
+
 //static routes init
 //app.use('/app', require('./controllers/app.controller'));
 app.use('/app', express.static('app'));
