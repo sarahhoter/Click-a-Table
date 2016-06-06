@@ -12,8 +12,10 @@
         $http.post('/auth/register', $scope.user)
             .success(function (response) {
                 $scope.result = response;
-                if (response.isAdded == true)
+                if (response.isAdded == true) {
+                    window.location.reload();
                     window.location.replace('#/index');
+                }
                 else
                     $scope.result.class = "errMessage";
 

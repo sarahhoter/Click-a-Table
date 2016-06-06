@@ -11,8 +11,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-              <li ng-repeat="item in items track by $index" ng-class="{active : item.isActive }" ng-click="setActive($index)">
-                  <a ng-href="{{item.path}}">{{item.label}}</a>
+              <li ng-repeat="item in items track by $index" ng-class="{active : item.isActive }" ng-click="setActive($index)"  ng-show="{{item.isVisible}}">
+                  <a ng-href="{{item.path}}" ng-click="menuClicked(item.onClick)" >{{item.label}}</a>
+              </li>
+              <li>
+                
               </li>
 
             <!--li class="dropdown">
@@ -29,5 +32,6 @@
             </!--li-->
           </ul>
         </div><!--/.nav-collapse -->
+
       </div>
     </nav>

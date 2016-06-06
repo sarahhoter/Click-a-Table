@@ -6,6 +6,14 @@ var path = require('path');
 var port = process.env.PORT || 3000;
 //initalization for using POST calls
 var bodyParser = require('body-parser');
+
+
+var session = require('express-session');
+app.use(session({
+    secret: "hashsecret", resave: true,
+    saveUninitialized: true
+}));
+
 app.use(bodyParser.urlencoded({ extended: false }));//read URL encoded
 app.use(bodyParser.json()); //read json data
 

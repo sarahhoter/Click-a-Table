@@ -11,10 +11,6 @@ var userSchema = require('../models/user');
 var User = connection.model('User', userSchema);
 
 var request = require('request');
-/*clientSessions = require("client-sessions");
-app.use(clientSessions({
-    secret: '0GBlXA9EsBt2ZFidf3RPvztczCewBxXK' 
-}));*/
 
 // routes
 router.post('/register', function (req, res) {
@@ -27,7 +23,6 @@ router.post('/register', function (req, res) {
         }
         else
         {
-            console.log(count);
             User.count({ email: user.email }, function (err, count) {
                 if (count > 0) {
                     res.json({ isAdded: false, message: "כתובת המייל קיימת במערכת למשתמש אחר", user: user });
@@ -35,6 +30,7 @@ router.post('/register', function (req, res) {
                 }
                 else {
                     user.save();
+                    req.session.user = user;
                     res.json({ isAdded: true, message: "משתמש נוסף בהצלחה", user: user });
 
                 }
@@ -46,24 +42,33 @@ router.post('/register', function (req, res) {
 });
 
 router.post('/login', function (req, res) {
-    var user = new User(req.body);
-    //do init just in first time
-    User.count({ password: user.password, userName: user.userName }, function (err, count) {
-        if (count > 0)
-        {
-            res.json({ isLogged: true, message: "כניסה בוצעה בהצלחה", user: user });
-        }
-        else
-        {
-            res.json({ isLogged: false, message: "הכניסה נכשלה. נתונים שגויים", user: user });
-        }
-    });
+    var testUser = new User(req.body);
 
-    
+    User.findOne({ password: testUser.password, userName: testUser.userName }, function (err, user) {
+        if (user) {
+
+            req.session.user = user;
+            //console.log(req.session);
+
+            res.json({ isLogged: true, message: "כניסה בוצעה בהצלחה", user: user });
+
+        }
+        else {
+            res.json({ isLogged: false, message: "הכניסה נכשלה. נתונים שגויים", user: user });
+
+        }
+    });    
 });
 
 
 router.post('/logout', function (req, res) {
+    req.session.destroy(function(err) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.redirect('/');
+        }
+    });
 
     //req.session_state.reset();
     //res.redirect('/');
@@ -71,10 +76,7 @@ router.post('/logout', function (req, res) {
     
 });
 router.post('/getuser', function (req, res) {
-
-   
-
-
+    res.json({ session: req.session });
 });
 
 

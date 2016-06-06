@@ -1,19 +1,31 @@
-﻿function HomeController($scope) {
-    $scope.items = [
-        { label: "דף הבית", path: "#", imageSrc: "", isActive: true },
-        { label: "התחבר", path: "#/login", imageSrc: "", isActive: false },
-        { label: "מסעדה", path: "#/menu", imageSrc: "", isActive: false },
-        /*{ label: "סוגי תפריטים", path: "#/courseType", imageSrc: "", isActive: false },
-        { label: "תפריט מנות", path: "#/course", imageSrc: "", isActive: false },*/
-        { label: "סל הזמנה", path: "#/order", imageSrc: "", isActive: false }
-    ];
-/*
-    $http.get('/all')
-        .success(function (data) {
-            $scope.todos = data;
-            console.log(data);
-        })
-        .error(function (data) {
-            console.log('Error: ' + data);
-        });*/
+﻿function HomeController($scope, $http) {
+    var user;
+    function setMenuItems() {
+        var isLogged = (user != null);
+
+        $scope.items = [
+            { label: "דף הבית", path: "#", imageSrc: "", isActive: true, isVisible: true, onClick: "" },
+            { label: "התחבר", path: "#/login", imageSrc: "", isActive: false, isVisible: !isLogged, onClick: "" },
+            { label: "התנתק", path: "#", imageSrc: "", isActive: false, isVisible: isLogged, onClick: "logout" },
+            { label: "מסעדה", path: "#/menu", imageSrc: "", isActive: false, isVisible: true, onClick: "" },
+            /*{ label: "סוגי תפריטים", path: "#/courseType", imageSrc: "", isActive: false },
+            { label: "תפריט מנות", path: "#/course", imageSrc: "", isActive: false },*/
+            { label: "סל הזמנה", path: "#/order", imageSrc: "", isActive: false, isVisible: true, onClick: "" }
+        ];
+    }
+    $http.post('/auth/getuser')
+            .success(function (response) {
+                user = response.session.user;
+
+                $scope.session = response.session;
+
+                setMenuItems();
+
+            })
+            .error(function (error) {
+                console.log('Error: ' + error);
+
+            });
+
+    
 }
