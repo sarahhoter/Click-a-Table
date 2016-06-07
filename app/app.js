@@ -10,6 +10,7 @@ app.controller("CourseController", ["$scope", "$routeParams", "$http", CourseCon
 app.controller("CourseDetailsController", ["$scope", "$routeParams", "$http", CourseDetailsController]);
 app.controller("HomeController", ["$scope", "$http", HomeController]);
 app.controller("HomePageController", ["$scope", "$http", HomePageController]);
+app.controller("ManagerController", ["$scope", "$http", ManagerController]);
 
 app.config(['$routeProvider',
 function ($routeProvider) {
@@ -41,6 +42,10 @@ function ($routeProvider) {
         when('/courseDetails/:courseId', {
             templateUrl: 'CourseDetails/courseDetails.html',
             controller: 'CourseDetailsController'
+        }).
+        when('/manager', {
+            templateUrl: 'MessagesManager/manager.html',
+            controller: 'ManagerController'
         }).
         otherwise({
             templateUrl: 'HomePage/homePage.html',

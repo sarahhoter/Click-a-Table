@@ -16,11 +16,13 @@ app.use(session({
 }));
 
 //static routes init
+//app.use('/app', require('./controllers/app.controller'));
 app.use('/app', express.static('app'));
 
 app.use('/auth', require('./controllers/auth.controller'));
 app.use('/menu', require('./controllers/menu.controller'));
 app.use('/courses', require('./controllers/course.controller'));
+app.use('/message', require('./controllers/message.controller'));
 app.use('/order', require('./controllers/order.controller'));
 
 // make '/app' default route
