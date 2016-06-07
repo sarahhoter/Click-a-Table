@@ -9,8 +9,39 @@ body {
     padding-top:150px
 }
 
-h1 {
+#navbarTop
+{
+    background: #0f598b;
+    height: 40px;
+    direction: rtl;
+}
 
+.img-rounded
+{
+height: 50px;
+    width: 200px;
+}
+#LoginForm
+{
+    padding: 30px;
+    width: 500px;
+    height: 400px;
+    background: #edebd9;
+}
+
+#ContainerInfo
+{
+    border: 4px solid #fff;
+    width: 645px;
+    background: #edebd9;
+    align-content: center;
+    height: 500px;
+}
+
+#DinerImg
+{
+    width: 620px;
+    height: 400px;
 }
 
 .container_wrapper {
@@ -112,12 +143,13 @@ h1 {
 .navbar-fixed-bottom{
     border-top:#244c83 3px solid !important;
     background-color:#f8f8f8 !important;
-    height: 50px;
+    height: 30px;
 }
 
 .navbar-fixed-top{
     border-bottom:#244c83 3px solid !important;
 }
+
 
 .menu-items{
     padding:15px 15px;
