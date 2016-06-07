@@ -1,6 +1,6 @@
 ﻿function HomeController($scope, $http) {
     var user;
-    function setMenuItems() {
+    $scope.setMenuItems  = function() {
         var isLogged = (user != null);
 
         $scope.items = [
@@ -19,7 +19,7 @@
 
                 $scope.session = response.session;
 
-                setMenuItems();
+                $scope.setMenuItems();
 
             })
             .error(function (error) {
