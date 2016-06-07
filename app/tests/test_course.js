@@ -1,10 +1,7 @@
-
-describe('Course', function () {
-
-    var $httpBackend;
+describe('CourseController', function () {
 
     beforeEach(module('myApp'));
-
+    var $scope = {};
     var $controller;
 
     beforeEach(inject(function($injector) {
@@ -22,7 +19,7 @@ describe('Course', function () {
 
             angular.forEach($scope.courses, function(value) {
                 expect(value.courseTypeId).toEqual(mockCourseTypeId);
-            }, log);
+            });
 
         }));
     });
