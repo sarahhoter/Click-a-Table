@@ -4,7 +4,7 @@
         var isLogged = (user != null);
 
         $scope.items = [
-            { label: "דף הבית", path: "#", imageSrc: "", isActive: true, isVisible: true, onClick: "" },
+            { label: "דף הבית", path: "#/HomePage", imageSrc: "", isActive: true, isVisible: true, onClick: "" },
             { label: "התחבר", path: "#/login", imageSrc: "", isActive: false, isVisible: !isLogged, onClick: "" },
             { label: "התנתק", path: "#", imageSrc: "", isActive: false, isVisible: isLogged, onClick: "logout" },
             { label: "מסעדה", path: "#/menu", imageSrc: "", isActive: false, isVisible: true, onClick: "" },

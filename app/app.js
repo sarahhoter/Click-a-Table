@@ -43,7 +43,8 @@ function ($routeProvider) {
             controller: 'CourseDetailsController'
         }).
         otherwise({
-            redirectTo: '/index'
+        templateUrl: 'HomePAge/homePage.html',
+        controller: 'HomePageController'
         });
 }]);
 

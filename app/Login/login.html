@@ -1,6 +1,6 @@
  <div class="row">
-    <div ng-form="myForm">
-        <div class="row">        
+    <div ng-form="myForm" id="LoginForm">
+        <div class="row">
             <label>:שם משתמש</label>        
             <input ng-model="user.userName" class="form-control" name="userName" ng-required="true" />
             <span class="errMessage" ng-show="myForm.userName.$dirty && myForm.userName.$error.required">This field is required</span>
