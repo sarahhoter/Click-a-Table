@@ -7,7 +7,7 @@ var config = require('config.json');
 var mongoose = require('mongoose'); //get DB
 var connection = mongoose.createConnection(config.connectionString);//connect to the db server
 
-var userSchema = require('../models/user');
+var userSchema = require('../models/user.model');
 var User = connection.model('User', userSchema);
 
 var request = require('request');
