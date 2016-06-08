@@ -1,12 +1,12 @@
  <div class="row">
     <div ng-form="myForm" id="LoginForm">
         <div class="row">
-            <label style="color: white;">:שם משתמש</label>        
+            <label >:שם משתמש</label>        
             <input ng-model="user.userName" class="register-txt form-control" name="userName" ng-required="true" />
             <span class="errMessage" ng-show="myForm.userName.$dirty && myForm.userName.$error.required">This field is required</span>
         </div>
         <div class="row">
-            <label style="color: white;">:סיסמא</label> 
+            <label >:סיסמא</label> 
             <input type="password" ng-model="user.password" class="register-txt form-control" name="password" ng-required="user.userName != ''" />
             <span class="errMessage" ng-show="myForm.password.$dirty && myForm.password.$error.required">This field is required</span>
         </div>
