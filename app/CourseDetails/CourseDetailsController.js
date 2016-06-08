@@ -1,22 +1,30 @@
 ﻿function CourseDetailsController($scope, $routeParams, $http)
 {
+    $scope.onLoad = onLoad;
     $scope.orderCourse = orderCourse;
     $scope.course = {}
     
     var courseId = ($routeParams.courseId || "");
 
-    $http.get('/courses/details/' + courseId)
-        .success(function(data) {
-            $scope.course = data[0];
-            console.log(data);
-        })
-        .error(function(data) {
-            debugger;
-            console.log('Error: ' + data);
-        });
+    onLoad();
+
+    function onLoad() {
+        $http.get('/courses/details/' + courseId)
+            .success(function (data) {
+                $scope.course = data;
+                console.log(data);
+            })
+            .error(function (data) {
+                console.log('Error: ' + data);
+            });
+    }
 
     function orderCourse() {
-        var course = ({courseId: courseId, amount: 1/*$scope.amount*/});
+        var amount = $scope.amount;
+        if (amount < 1)
+            return;
+
+        var course = ({courseId: courseId, amount: amount});
         $http.post('/order/addOrderItem', course)
             .success(function (response) {
                 if (response.isOrdered == true) {
@@ -27,7 +35,6 @@
             })
             .error(function (error) {
                 console.log('Error: ' + error);
-
             });
     }
 }
