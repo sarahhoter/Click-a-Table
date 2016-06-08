@@ -5,8 +5,7 @@ var app = angular.module("myApp", ["ngRoute"]);
 app.controller("LoginController", ["$scope", "$http", LoginController]);
 app.controller("RegisterController", ["$scope", "$http", RegisterController]);
 app.controller("OrderController", ["$scope", "$http", OrderController]);
-app.controller("MenuController", ["$scope", "$http", MenuController]);
-app.controller("CourseTypeController", ["$scope", "$http", CourseTypeController]);
+app.controller("MenuController", ["$scope", "$routeParams", "$http", MenuController]);
 app.controller("CourseController", ["$scope", "$routeParams", "$http", CourseController]);
 app.controller("CourseDetailsController", ["$scope", "$routeParams", "$http", CourseDetailsController]);
 app.controller("HomeController", ["$scope", "$http", HomeController]);
@@ -30,10 +29,10 @@ function ($routeProvider) {
             templateUrl: 'Menu/menu.html',
             controller: 'MenuController'
         }).
-        when('/courseType', {
-            templateUrl: 'CourseType/courseType.html',
-            controller: 'CourseTypeController'
-        }).
+        when('/menu/:id', {
+            templateUrl: 'Menu/menu.html',
+            controller: 'MenuController'
+        }).			
         when('/course/:courseTypeId', {
             templateUrl: 'Course/course.html',
             controller: 'CourseController'
@@ -43,24 +42,7 @@ function ($routeProvider) {
             controller: 'CourseDetailsController'
         }).
         otherwise({
-        templateUrl: 'HomePAge/homePage.html',
-        controller: 'HomePageController'
+            templateUrl: 'HomePage/homePage.html',
+			controller: 'HomePageController'
         });
 }]);
-
-
-
-/*
-app.service('menuService', function($http){
-    var getAllUsers = function () {
-        var request = {
-            method: 'GET',
-            url: '/current'
-        };
-        return $http(request);
-    };
-    return {
-        getAllUsers:getAllUsers
-    };
-})
-*/

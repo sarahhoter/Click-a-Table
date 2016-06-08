@@ -15,5 +15,9 @@
             .error(function (data) {
                 console.log('Error: ' + data);
             });
+			
+		$http.get('/Menu/getById/' + id).success( function(response) {
+			$scope.parentCourseTypeId = response.parentId;
+		});				
     }
 }
