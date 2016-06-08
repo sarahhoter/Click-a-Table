@@ -26,7 +26,6 @@ height: 50px;
     padding: 30px;
     width: 500px;
     height: 400px;
-    background: black;
 }
 
 #ContainerInfo
@@ -50,9 +49,7 @@ height: 50px;
 }
 
 .container {
-    background:black;
     max-width: 620px;
-	color: white;
 }
 
 
