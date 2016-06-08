@@ -180,3 +180,9 @@ height:90px;
     text-shadow: 1px 1px 1px #0F598B;
     background: #0F598B;
 }
+
+.form-control{
+    width:90% !important;
+    margin:0 25px;
+}
+}
