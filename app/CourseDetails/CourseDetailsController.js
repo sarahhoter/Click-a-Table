@@ -20,9 +20,9 @@
     }
 
     function orderCourse() {
-        var amount = $scope.amount;
-        if (amount < 1)
-            return;
+        var amount = $scope.amount || 1;
+        /*if (amount < 1)
+            return;*/
 
         var course = ({courseId: courseId, amount: amount});
         $http.post('/order/addOrderItem', course)
