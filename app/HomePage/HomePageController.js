@@ -1,3 +1,3 @@
-function HomePageController() {
+function HomePageController($scope, $http) {
   
 }
