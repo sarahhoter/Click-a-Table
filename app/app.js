@@ -9,6 +9,7 @@ app.controller("MenuController", ["$scope", "$routeParams", "$http", MenuControl
 app.controller("CourseController", ["$scope", "$routeParams", "$http", CourseController]);
 app.controller("CourseDetailsController", ["$scope", "$routeParams", "$http", CourseDetailsController]);
 app.controller("HomeController", ["$scope", "$http", HomeController]);
+app.controller("HomePageController", ["$scope", "$http", HomePageController]);
 
 app.config(['$routeProvider',
 function ($routeProvider) {
