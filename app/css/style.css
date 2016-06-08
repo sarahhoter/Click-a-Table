@@ -174,3 +174,9 @@ height:90px;
     margin:50px 50px;
 }
 
+.register-txt{
+    height: 40px;
+    color: #bbb;
+    text-shadow: 1px 1px 1px #0F598B;
+    background: #0F598B;
+}
