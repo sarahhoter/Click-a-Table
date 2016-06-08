@@ -52,6 +52,7 @@ height: 50px;
 .container {
     background:black;
     max-width: 620px;
+	color: white;
 }
 
 
@@ -171,6 +172,7 @@ height:90px;
 .menu-items{
     padding:15px 15px;
     margin:50px 50px;
+	direction: rtl;
 }
 
 .register-txt{
