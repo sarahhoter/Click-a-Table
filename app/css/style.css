@@ -83,6 +83,21 @@ height: 50px;
     margin: 2px;
 }
 
+.menu-item-img{
+float:right;
+margin:20px 30px;
+height:90px;
+}
+
+.menu-item-txt {
+    float:right;
+    margin:0 auto;
+    width:100%;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
 .menu-item-second {
     background-color: blue; 
     display: inline-block;
