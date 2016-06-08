@@ -106,7 +106,8 @@ height:90px;
 }
 
 .order-item {
-    background-color: magenta; 
+    background-color: #931693; 
+    margin-top:15px;
     border-radius: 10px;
     border: 1px solid blue;
     width: 250px;
@@ -119,7 +120,7 @@ height:90px;
 }
 
 .order-total {
-    background-color: green; 
+    background-color: #195619; 
     border-radius: 5px;
     border: 1px solid blue;
     width: 250px;
