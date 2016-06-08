@@ -6,8 +6,8 @@ var menuSchema = new Schema({
     name: String,
     image: String,
     parentId: Number,
-    path: String,
-    onClick: String
+    onClick: String,
+	hasChildren: Boolean
 });
 
 

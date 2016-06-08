@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var orderSchema = new Schema({
     id: Number,
-    userId: Number,
+    userId: { type: Schema.Types.ObjectId, ref: 'Users' }, //Number,//
     restaurantId: Number,
     tableNo: Number,
     date: Date,

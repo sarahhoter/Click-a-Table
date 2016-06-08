@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var orderItemSchema = new Schema({
     orderId: {type: Schema.Types.ObjectId, ref: 'Order' }, //Number,// 
-    courseId: {type: Schema.Types.ObjectId, ref: 'Course' },//Number,// 
+    courseId: Number, //{type: Schema.Types.ObjectId, ref: 'Course' },//Number,// 
     amount: Number,
     orderTime: Number,
     closeTime: Number,

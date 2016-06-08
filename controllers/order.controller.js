@@ -24,104 +24,94 @@ module.exports = router;
 function viewOrder(req, res) {
     var date = new Date();
     date.setHours(0,0,0,0);
-    Order.findOne({userId: 1, restaurantId: 1, date: date, status: 1}, function(err, order) {
+	
+	console.log("start viewOrder");
+	
+    if (req.session.user == null) {
+		res.json(courses);
+        return;
+    }
+	
+	var courses = [];
+    Order.findOne({userId: req.session.user._id, restaurantId: 1, date: date, status: 1}, function(err, order) {
         if (err)
             return handleError(res, err);
 
-        var itemsIds = [];
+		if (order == null) {
+			res.json(courses);
+			return;
+		}
+	
+        //console.log("start find OrderItems, orderId: " + order._id);
+		
         OrderItem.find({orderId: order._id}, function(err, items) {
             if (err)
                 return handleError(res, err);
+			
+			var index = 0;
             items.forEach(function(item) {
-                itemsIds.push(item.courseId);
-            });
-            //FIXME
-            Course.find({id: itemsIds[0].id /*{ $in : itemsIds }*/}, function(err, courses) {
-                if (err)
-                    return handleError(res, err);
-                res.json(courses);
-            });
-        });
-
-    });
-
-   /* OrderItem.find(/!*{userId: 1, restaurantId: 1, date: date, status: 1}*!/).populate('orders').populate('courses').exec(function(err, orders) {
-        if (err) throw err;
-
-        /!*var orderedCourses = [];
-        orders.forEach(function(order) {
-            order.courses.forEach(function(course) {
-                orderedCourses.push(course);
-            });
-        });*!/
-
-        res.send(); // adTimes should contain all addTimes from his friends
-    });*/
- /*   Course.find().populate('orderitems').populate('order', null, {userId: 1, restaurantId: 1, date: date, status: 1}).exec(function(err, docs) {
-        if (err)
-            return res.send(err);
-
-        res.json(docs);
-    });*/
-
-   /* Course
-        .find({})
-        .populate({
-            path: 'orderitems'
-        })
-        .populate({
-            path: 'order',
-            match: {userId: 1, restaurantId: 1, date: date}
-        })
-        .exec(function(err, docs) {
-            if (err) throw err;
-
-            res.json(docs);
-        })*/
-   /* Order.find({userId: 1, restaurantId: 1, date: date})
-        .populate('orderitems')
-        .populate('course')
-        .exec(function(err, docs) {
-            if (err)
-                return res.send(err);
-
-            res.json(docs.courses);
-        });*/
+				console.log("order items: " + item);
+				
+				
+				Course.findOne({courseId: item.courseId}, function(err, course) {
+					//console.log("start Course findOne err:" + err);
+					if (err)
+						return handleError(res, err);
+					
+					//console.log("start Course findOne course: " + course);
+					
+					if (course != null) {
+						courses.push({ courseId: course.courseId, label: course.label, price: course.price, amount: item.amount });
+					}
+					
+					index++;
+					
+					if (index == items.length)
+						res.json(courses);
+				});
+			});
+		});
+		
+		
+	});
 }
 
 function orderItem(req, res) {
-
+    if (req.session.user == null) {
+        res.json({ isOrdered: false, messages: "לא ניתן לבצע פעולה זו ללא כניסה למערכת/הרשמה" });
+        return;
+    }
+	
     var date = new Date();
     date.setHours(0,0,0,0);
     var orderId;
 
-    Order.findOne({userId: 1, restaurantId: 1, date: date, status: 1}, function(err, res_order) {
+	console.log("orderItem courseId: " + req.body.courseId);
+	console.log("orderItem userId: " + req.session.user._id);
+	
+    Order.findOne({userId: req.session.user._id, restaurantId: 1, date: date, status: 1}, function(err, res_order) {
         if (err)
             return handleError(res, err);
 
         if (res_order == null) {
+			console.log("orderItem res_order is null");
+			
            Order.count({}, function(err, count) {
                 createOrder(req, res, err, count);
             });
         } else {
+			console.log("orderItem res_order._id: " + res_order._id);
+			
             orderId = res_order._id;
-            Course.findOne({
-                courseId: req.body.courseId
-            }, function(err, res_order_item) {
-                createOrderItem(req, res, orderId, err, res_order_item);
-            });
+			createOrderItem(req, res, orderId);
         }
-
-
     });
-
 }
 
-function createOrderItem(req, res, orderId,  err, res_order_item) {
-    if (err)
-        return handleError(res, err);
-
-    createNewOrderItem(orderId, res_order_item._id, req.body.amount, function(err, new_item) {
+function createOrderItem(req, res, orderId) {
+	console.log("createOrderItem amount: " + req.body.amount);
+	
+    createNewOrderItem(orderId, req.body.courseId, req.body.amount, function(err, new_item) {
             if (err)
                 return handleError(res, err);
 
@@ -133,14 +123,12 @@ function createOrder(req, res, err, count) {
     if (err)
         return handleError(res, err);
 
-    createNewOrder(/*id*/(count + 1), /*userId*/1, /*restaurantId*/1, /*tableNo*/1, function (err, newItem) {
+    createNewOrder(/*id*/(count + 1), req.session.user._id, /*restaurantId*/1, /*tableNo*/1, function (err, newItem) {
         if (err)
             return handleError(res, err);
         console.dir(newItem);
         var orderId = newItem._id;
-        Course.findOne({ courseId: req.body.courseId}, function(err, res_order_item) {
-            createOrderItem(req, res, orderId, err, res_order_item);
-        });
+        createOrderItem(req, res, orderId);
     });
 }
 
@@ -149,13 +137,16 @@ function createNewOrder(courseId, userId, restaurantId, tableNo, callback) {
     var date = new Date();
     date.setHours(0,0,0,0);
 
-    var newOrder = new Order({orderId: courseId,
+    var newOrder = new Order({
+		orderId: courseId,
         userId: userId,
         restaurantId: restaurantId,
         tableNo: tableNo,
         date: date,
         createTime: 0,
-        status: 1 /*open*/ });
+        status: 1 /*open*/ 
+	});
+	
     newOrder.save(function(err, newItem) {
         if (err) {
             console.error(err);
