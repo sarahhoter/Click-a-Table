@@ -36,7 +36,7 @@ height: 50px;
     background: #edebd9;
     align-content: center;
     height: 500px;
-    position:absolute;
+    position : absolute;
 }
 
 #DinerImg
@@ -47,10 +47,10 @@ height: 50px;
 
 .container_wrapper {
     margin: 20px;
-    background:black;
 }
 
 .container {
+    background:black;
     max-width: 620px;
 }
 
