@@ -1,13 +1,20 @@
-﻿function MenuController($scope,$http)
+﻿function MenuController($scope, $routeParams, $http)
 {
-    $http.get('/api/menu/getMenu').success( function(response) {
+	var id = ($routeParams.id || 0);
+	$scope.showTable = (id == 0);
+	
+    $http.get('/menu/getMenu/' + id).success( function(response) {
         $scope.menu = response;
+
+		angular.forEach($scope.menu, function (item) {
+			item.path = (item.onClick == "" ?  (item.hasChildren ? "#/menu/" : "#/course/") + item.id : "");
+			item.image = item.image || "no-image.jpg";
+		});
     });
     
-
     $scope.saveCalls = function(type)
     {
-        $http.get('/api/menu/saveCalls/' + type).success(function (response) {
+        $http.get('/menu/saveCalls/' + type).success(function (response) {
             alert(response.messages);
         });
     }

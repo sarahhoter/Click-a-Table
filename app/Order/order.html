@@ -1,34 +1,16 @@
-﻿<div class="order-item">
-    <div>מיץ תפוזים סחוט טבעי</div>
-    <div>כמות: 1</div>
-    <div>מחיר: 12</div>
-</div>
-<div class="order-item">
-    <div>סלט הבית</div>
-    <div>כמות: 2</div>
-    <div>מחיר:62 </div>
-</div>
-<div class="order-item">
-    <div>סופלה עם נגיעות שוקולד לבן</div>
-    <div>כמות: 2</div>
-    <div>מחיר: 40</div>
-</div>
-<div class="order-total">
-    <div>סך הכל: 114</div>
-</div>
-
-<course courses="courses"></course>
-
-<div ng-repeat="course in courses track by $index">
+﻿<div ng-repeat="course in courses track by $index">
     <br/>
-    <a ng-href="#/courseDetails/{{course.id}}" class="btn btn-default">
-        <div class="menu-item-container">
-            <div class="course-item-img">
-                <img src="css/img/{{course.image}}" />
-            </div>
-            <div class="course-item-desc">
-                {{course.label}}
-            </div>
-        </div>
-    </a>
+	<div class="order-item">
+		<div>{{course.label}}</div>
+		<div>כמות: {{course.amount}}</div>
+		<div>מחיר: {{course.price}}</div>
+	</div>
+</div>
+
+<div ng-show="{{!noItems}}" class="order-total">
+    <div>סך הכל: {{total}}</div>
+</div>
+
+<div ng-show="{{noItems}}">
+    אין פריטים בהזמנה
 </div>
