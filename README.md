@@ -41,8 +41,8 @@ Please visit our wiki for further project info:
 - [Iteration 0 - ZFR](../../wiki/Iter-0-ZFR)
 - [Iteration 1 - MVP](../../wiki/Iter-1---MVP)
 - [Iteration 2 - Order](../../wiki/Iter-2---Order)
-- [Iteration 3 - Feature Y]()
-- [Iteration 4 - Feature Z]()
+- [Iteration 3 - Design and invoice](../../iter-3-Design-and-invoice)
+- [Iteration 4 - Manager, table and design](../../iter-4-Manager-Table-and-Design)
 
 
 
