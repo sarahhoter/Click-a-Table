@@ -44,7 +44,7 @@ function viewOrder(req, res) {
 	
         //console.log("start find OrderItems, orderId: " + order._id);
 		
-        OrderItem.find({orderId: order._id}, function(err, items) {
+        OrderItem.find({orderId: order.id}, function(err, items) {
             if (err)
                 return handleError(res, err);
 			
@@ -102,7 +102,7 @@ function orderItem(req, res) {
         } else {
 			console.log("orderItem res_order._id: " + res_order._id);
 			
-            orderId = res_order._id;
+            orderId = res_order.id;
 			createOrderItem(req, res, orderId);
         }
     });
@@ -127,18 +127,17 @@ function createOrder(req, res, err, count) {
         if (err)
             return handleError(res, err);
         console.dir(newItem);
-        var orderId = newItem._id;
+        var orderId = newItem.id;
         createOrderItem(req, res, orderId);
     });
 }
 
-function createNewOrder(courseId, userId, restaurantId, tableNo, callback) {
-    var orderId = -1;
+function createNewOrder(orderId, userId, restaurantId, tableNo, callback) {
     var date = new Date();
     date.setHours(0,0,0,0);
 
     var newOrder = new Order({
-		orderId: courseId,
+		id: orderId,
         userId: userId,
         restaurantId: restaurantId,
         tableNo: tableNo,
@@ -154,7 +153,7 @@ function createNewOrder(courseId, userId, restaurantId, tableNo, callback) {
         }
 
         console.dir(newItem);
-        orderId = newItem._id;
+        orderId = newItem.id;
 
         return callback(null, newOrder);
     });

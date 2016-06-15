@@ -7,8 +7,8 @@ var orderSchema = new Schema({
     restaurantId: Number,
     tableNo: Number,
     date: Date,
-    createTime: Number,
-    closeTime: Number,
+    createTime: Date,
+    closeTime: Date,
     status: String,
     actualPayment: Number
 });

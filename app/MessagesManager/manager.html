@@ -1,0 +1,28 @@
+
+<div ng-repeat="message in messages track by $index">
+    <br/>
+    <div class="menu-item-container">
+        <div class="course-item-desc">
+            {{message.tableNo}}
+        </div>
+        <div class="course-item-desc">
+            {{message.callType}}
+        </div>
+
+        <button ng-click="closeMessage(messages, $index, message.tableNo, message.callType)" class="btn">סגור קריאה</button>
+    </div>
+</div>
+
+
+<div ng-repeat="order in orders track by $index">
+    <br/>
+    <div class="order-item">
+        <div>{{order.label}}</div>
+        <div>כמות: {{order.amount}}</div>
+        <div>שולחן: {{order.tableNo}}</div>
+        <button ng-click="closeOrder(orders, $index, order.tableNo, order.courseId, order.orderId)" class="btn">סגור הזמנה</button>
+
+    </div>
+</div>
+
+
