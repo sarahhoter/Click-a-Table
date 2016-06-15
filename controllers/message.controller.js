@@ -20,14 +20,14 @@ var Order = connection.model('Order', orderSchema);
 // routes
 // router.post('/addMessage', addMessage);
 router.post('/closeMessage', closeMessage);
-router.post('/closeOrder', closeOrder);
+router.post('/closeOrderItem', closeOrderItem);
 router.get('/viewOpenUserCallMessages', getOpenUserCallMessages);
 router.get('/viewOpenOrders', getOpenOrders);
 
 // var async = require('async');
 module.exports = router;
 function getOpenUserCallMessages(req, res) {
-    UserCall.find({status: 1}, function(err, messages) {
+    UserCall.find({status: 1}).sort({date: 1}).exec(function(err, messages) {
         if (err)
             return handleError(res, err);
         res.json(messages);
@@ -35,7 +35,7 @@ function getOpenUserCallMessages(req, res) {
 }
 function getOpenOrders(req, res) {
     var courses = [];
-    OrderItem.find({status: 1}, function(err, items) {
+    OrderItem.find({status: 1}).sort({orderTime: 1}).exec(function(err, items) {
         if (err)
             return handleError(res, err);
 
@@ -108,11 +108,27 @@ function closeMessage(req, res) {
     );
 }
 
-function closeOrder(req, res) {
+function closeOrderItem(req, res) {
     var courseId = req.body.courseId;
     var orderId = req.body.orderId;
 
     OrderItem.update({ orderId: orderId, courseId: courseId, status: 1}, {status: 0},
+        function(err, numAffected) {
+            if (err)
+                res.send(err);
+            res.json({isDone: true, messages: "הזמנה נסגרה"});
+        }
+    );
+}
+
+function closeOrder(req, res) {
+    var tableNo = req.body.tableNo;
+    var orderId = req.body.orderId;
+    var date = new Date();
+    date.setHours(0,0,0,0);
+
+
+    Order.update({ id: orderId, tableNo: tableNo, date: date, status: 1}, {status: 0},
         function(err, numAffected) {
             if (err)
                 res.send(err);
