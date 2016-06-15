@@ -5,8 +5,8 @@ var orderItemSchema = new Schema({
     orderId: Number,
     courseId: Number,
     amount: Number,
-    orderTime: Number,
-    closeTime: Number,
+    orderTime: Date,
+    closeTime: Date,
     status: String
 });
 

@@ -142,7 +142,7 @@ function createNewOrder(orderId, userId, restaurantId, tableNo, callback) {
         restaurantId: restaurantId,
         tableNo: tableNo,
         date: date,
-        createTime: 0,
+        createTime: new Date(),
         status: 1 /*open*/ 
 	});
 	
@@ -165,7 +165,7 @@ function createNewOrderItem(orderId, courseId, amount, callback) {
         orderId: orderId,
         courseId: courseId,
         amount: amount,
-        orderTime: 0,
+        orderTime: new Date(),
         status: 1 /*open*/
     });
     orderCourse.save(function (err, newItem) {

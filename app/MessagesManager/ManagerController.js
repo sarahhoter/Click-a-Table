@@ -5,7 +5,7 @@ function ManagerController($scope, $http) {
     $scope.loadCalls = loadCalls;
     $scope.loadOrders = loadOrders;
     $scope.closeMessage  = closeMessage;
-    $scope.closeOrder  = closeOrder;
+    $scope.closeOrderItem  = closeOrderItem;
 
     loadCalls();
     loadOrders();
@@ -47,11 +47,11 @@ function ManagerController($scope, $http) {
             });
     }
 
-    function closeOrder(items, index, tableNo, courseId, orderId) {
+    function closeOrderItem(items, index, tableNo, courseId, orderId) {
         // var isLogged = (user != null);
 
         var order = ({courseId: courseId, tableNo: tableNo, orderId: orderId});
-        $http.post('/message/closeOrder', order)
+        $http.post('/message/closeOrderItem', order)
             .success(function (response) {
                 if (response.isDone == true) {
                     loadOrders();
