@@ -16,7 +16,6 @@ app.use(session({
 }));
 
 //static routes init
-//app.use('/app', require('./controllers/app.controller'));
 app.use('/app', express.static('app'));
 
 app.use('/auth', require('./controllers/auth.controller'));
