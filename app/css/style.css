@@ -70,13 +70,13 @@ height: 50px;
 }
 
 .menu-item-container img{
-    max-width: 60px;    
+    max-width: 60px;
     width: 50px;
     height: 50px;
 }
 
 .menu-item {
-    background-color: #931693; 
+    background-color: #931693;
     display: inline-block;
     width: 150px;
     height: 150px;
@@ -131,16 +131,21 @@ height:90px;
 }
 
 .course-item-img {
-    /*display: inline-block;*/
+    float:right;
+    margin:20px 30px;
+    width: 90px;
+    max-width: 250px;
+    height:90px;
 }
 
 .course-item-img img {
     width: 150px;
     max-width: 250px;
+    height:100px;
 }
 
 .course-item-desc {
-    display: inline-block;
+    font-size: large;
 }
 
 .course-item-desc span {
