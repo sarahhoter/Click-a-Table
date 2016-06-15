@@ -34,7 +34,7 @@ function getByCourseType(req, res) {
     var courseTypeId = req.params.courseTypeId;
 	console.log("getByCourseType: " + courseTypeId);
 
-    Course.findOne({courseTypeId: courseTypeId}, function (err, courses) {
+    Course.find({courseTypeId: courseTypeId}, function (err, courses) {
         if (err)
             res.send(err);
 
