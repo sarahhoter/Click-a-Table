@@ -14,6 +14,15 @@
 </div>
 
 
-<br/>
-<br />
-<a href="#/courseType/" class="btn btn-info">חזור לתפריט מנות</a>
+<div ng-repeat="order in orders track by $index">
+    <br/>
+    <div class="order-item">
+        <div>{{order.label}}</div>
+        <div>כמות: {{order.amount}}</div>
+        <div>שולחן: {{order.tableNo}}</div>
+        <button ng-click="closeOrder(orders, $index, order.tableNo, order.courseId, order.orderId)" class="btn">סגור הזמנה</button>
+
+    </div>
+</div>
+
+
