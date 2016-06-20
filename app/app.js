@@ -3,6 +3,7 @@
 var app = angular.module("myApp", ["ngRoute"]);
 
 app.controller("LoginController", ["$scope", "$http", LoginController]);
+app.controller("SelectTableController", ["$scope", "$http", SelectTableController]);
 app.controller("RegisterController", ["$scope", "$http", RegisterController]);
 app.controller("OrderController", ["$scope", "$http", OrderController]);
 app.controller("MenuController", ["$scope", "$routeParams", "$http", MenuController]);
@@ -22,6 +23,10 @@ function ($routeProvider) {
         when('/register', {
             templateUrl: 'Register/register.html',
             controller: 'RegisterController'
+        }).
+        when('/selectTable', {
+            templateUrl: 'SelectTable/selectTable.html',
+            controller: 'SelectTableController'
         }).
         when('/order', {
             templateUrl: 'Order/order.html',

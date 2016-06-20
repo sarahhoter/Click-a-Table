@@ -1,0 +1,15 @@
+ <div class="row">
+    <div ng-form="myForm" id="LoginForm">
+        <div class="row">
+            <label >:מספר סועדים</label>        
+            <input ng-model="table.numSeats" class="register-txt form-control" name="numSeats" ng-required="true" />
+            <span class="errMessage" ng-show="myForm.numSeats.$dirty && myForm.numSeats.$error.required">This field is required</span>
+        </div>
+        <br/>
+        <span class="{{result.class}}">{{result.message}}</span>
+        <br />
+        <br />
+        <button ng-click="getNumTable()" class="btn btn-primary">קבל שולחן</button>
+        <a href="#/menu" class="btn btn-link">חזרה לתפריט</a>
+    </div>
+</div>

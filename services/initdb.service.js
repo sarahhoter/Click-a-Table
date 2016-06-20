@@ -9,10 +9,14 @@ var Menu = connection.model('Menu', menuSchema);
 var courseSchema = require('../models/course.model');
 var Course = connection.model('Course', courseSchema);
 
+var tableSchema = require('../models/table.model');
+var Table = connection.model('Table', tableSchema);
+
 var service = {};
 
 service.initMenu = initMenu;
 service.initCourses = initCourses;
+service.initTables = initTables;
 
 module.exports = service;
 
@@ -178,4 +182,36 @@ function initCourses() {
                 res.send(err);
         }
     );*/
+}
+
+function initTables() {
+    console.log("start initTables");
+
+    var obj = new Table({ restaurantId: 1, tableNo: 1, minSeats: 1, maxSeats: 4, userId: null,date: null,status: 0 });
+    obj.save();
+
+    var obj = new Table({ restaurantId: 1, tableNo: 2, minSeats: 1, maxSeats: 4, userId: null, date: null, status: 0 });
+    obj.save();
+
+    var obj = new Table({ restaurantId: 1, tableNo: 3, minSeats: 1, maxSeats: 4, userId: null, date: null, status: 0 });
+    obj.save();
+
+    var obj = new Table({ restaurantId: 1, tableNo: 4, minSeats: 1, maxSeats: 4, userId: null, date: null, status: 0 });
+    obj.save();
+
+    var obj = new Table({ restaurantId: 1, tableNo: 5, minSeats: 1, maxSeats: 4, userId: null, date: null, status: 0 });
+    obj.save();
+
+    var obj = new Table({ restaurantId: 1, tableNo: 6, minSeats: 3, maxSeats: 6, userId: null, date: null, status: 0 });
+    obj.save();
+
+    var obj = new Table({ restaurantId: 1, tableNo: 7, minSeats: 3, maxSeats: 6, userId: null, date: null, status: 0 });
+    obj.save();
+
+    var obj = new Table({ restaurantId: 1, tableNo: 8, minSeats: 3, maxSeats: 6, userId: null, date: null, status: 0 });
+    obj.save();
+
+    var obj = new Table({ restaurantId: 1, tableNo: 9, minSeats: 3, maxSeats: 6, userId: null, date: null, status: 0 });
+    obj.save();
+    console.log("end initTables");
 }

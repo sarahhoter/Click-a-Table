@@ -73,9 +73,8 @@ router.post('/logout', function (req, res) {
 
 
 });
-router.post('/getuser', function (req, res) {
+router.post('/getSessionDetails', function (req, res) {
     res.json({ session: req.session });
 });
-
 
 module.exports = router;

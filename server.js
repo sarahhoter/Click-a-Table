@@ -23,6 +23,7 @@ app.use('/menu', require('./controllers/menu.controller'));
 app.use('/courses', require('./controllers/course.controller'));
 app.use('/message', require('./controllers/message.controller'));
 app.use('/order', require('./controllers/order.controller'));
+app.use('/table', require('./controllers/table.controller'));
 
 // make '/app' default route
 app.get('/', function (req, res) {
