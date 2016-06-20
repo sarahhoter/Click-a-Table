@@ -1,6 +1,11 @@
 <div class="menu-items">
-    <div ng-show="{{showTable}}" class="menu-item-container" style="background-color: #CC3F3F">
-        <span style="font-size: 30px">שולחן מס' 5</span>
+    <div ng-show="isLogged && !showTable" class="menu-item-container" style="background-color: #CC3F3F">
+        <span style="font-size: 25px">לא קיים שולחן לסועד</span>
+        <a href="#/selectTable"  class="btn btn-link">בחר מספר שולחן</a>
+    </div>
+    <div ng-show="isLogged && showTable" class="menu-item-container" style="background-color: #CC3F3F">
+        <span style="font-size: 25px">שולחן מס' </span>
+        <span style="font-size: 30px">{{tableNo}}</span>
     </div>
     <div class="menu-item" ng-repeat="item in menu track by $index">
         <a ng-href="{{item.path}}" ng-click="menuClicked(item.onClick)" >

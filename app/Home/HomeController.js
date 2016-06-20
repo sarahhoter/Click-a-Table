@@ -13,7 +13,7 @@
             { label: "סל הזמנה", path: "#/order", imageSrc: "", isActive: false, isVisible: true, onClick: "" }
         ];
     }
-    $http.post('/auth/getuser')
+    $http.post('/auth/getSessionDetails')
             .success(function (response) {
                 user = response.session.user;
 

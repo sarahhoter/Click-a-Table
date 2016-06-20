@@ -86,11 +86,15 @@ function saveCalls(req, res) {
         res.json({ isSaved: false, messages: "לא ניתן לבצע פעולה זו ללא כניסה למערכת/הרשמה" });
         return;
     }
+    if (req.session.table == null) {
+        res.json({ isSaved: false, messages: "לא ניתן לבצע פעולה זו ללא הזמנת שולחן" });
+        return;
+    }
 
     var newUserCall = new UserCall({
         userId: req.session.user._id,
         restaurantId: 1,
-        tableNo: 0,
+        tableNo: req.session.table.tableNo,
         date: date,
         callType: type,
         status: 1 /*open*/ });
