@@ -147,9 +147,8 @@ height:90px;
 }
 
 .order-total {
-    background-color: #195619; 
     border-radius: 5px;
-    border: 1px solid blue;
+    border: 3px solid #6fb7fb;
     width: 250px;
     height: 50px;
     font-size: 20px;
