@@ -134,15 +134,14 @@ height:90px;
 }
 
 .order-item {
-    background-color: #931693; 
     margin-top:15px;
     border-radius: 10px;
-    border: 1px solid blue;
+    border: 3px solid #ff5900;
     width: 250px;
     height: 100px;
     margin-bottom: 20px;
     font-size: 20px;
-    color: white;
+    color: #ffcda3;
     margin-right: auto;
     margin-left: auto;
 }
