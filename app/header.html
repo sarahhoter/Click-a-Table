@@ -12,8 +12,10 @@
         <div id="navbar">
               <nav class="navbar navbar-inverse navbar-fixed-top" id="navbarTop" >
                   <div class="container-fluid">
-                          <a  href="#"><img src="css/img/logo.png" class="img-rounded" alt="Cinque Terre" /></a>
-
+                  <div class="logo">
+                        <a  href="#"><img src="css/img/logo.png" class="img-rounded" alt="Cinque Terre" /></a>
+                  </div>
+                  <div>
                       <ul class="nav navbar-nav" >
               <li  ng-repeat="item in items track by $index" ng-class="{active : item.isActive }" ng-click="setActive($index)"  ng-show="{{item.isVisible}}">
                   <a ng-href="{{item.path}}" ng-click="menuClicked(item.onClick)" >{{item.label}}</a>
@@ -35,6 +37,7 @@
               </ul>
             </!--li-->
           </ul>
+          </div >
         </div><!--/.nav-collapse -->
                   </nav>
             </div>
