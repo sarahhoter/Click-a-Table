@@ -22,6 +22,10 @@ body {
  background-color:none !important;
 }
 
+.logo{
+	float:right;
+}
+
 
 
 .navbar-inverse .navbar-nav > li > a
