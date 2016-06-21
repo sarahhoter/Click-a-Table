@@ -212,6 +212,10 @@ height:90px;
     background: #0F598B;
 }
 
+.courses{
+	min-width :600px !important;
+}
+
 .form-control{
     width:90% !important;
     margin:0 25px;
