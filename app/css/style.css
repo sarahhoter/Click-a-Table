@@ -176,7 +176,7 @@ height:90px;
 }
 
 .course-item-desc span {
-    color: black;
+    color: #fe972d;
 }
 
 .course-item{
@@ -189,7 +189,8 @@ height:90px;
     max-width: none !important;
     box-shadow: -2px 2px 8px #ebebf0;
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px;
+    margin-bottom : 20px;
 }
 
 .panel-footer {
