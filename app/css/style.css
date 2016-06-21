@@ -74,6 +74,10 @@ height: 50px;
     max-width: 620px;
 }
 
+.user-details{
+	color:#ff9c47;
+	font-size : 20px;
+}
 
 .menu-item-container {
       min-width: 230px;
