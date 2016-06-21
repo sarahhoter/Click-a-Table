@@ -18,8 +18,11 @@ body {
 }
 
 .btn-default{
-border-color: #178bff;
+ border-color: #178bff !important;
+ background-color:none !important;
 }
+
+
 
 .navbar-inverse .navbar-nav > li > a
 {
