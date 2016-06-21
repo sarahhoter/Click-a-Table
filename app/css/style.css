@@ -205,7 +205,7 @@ height:90px;
 }
 
 .errMessage {
-    color: red;
+    color: #ff7500;
 }
 
 .navbar-fixed-bottom{
@@ -229,7 +229,7 @@ height:90px;
     height: 40px;
     color: #bbb;
     text-shadow: 1px 1px 1px #0F598B;
-    background: #0F598B;
+    background: #4e5663;
 }
 
 .courses{
