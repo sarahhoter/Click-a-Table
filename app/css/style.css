@@ -14,7 +14,7 @@ body {
 .open .dropdown-toggle.btn-default {
   color: #0f2638;
   
-  border-color: #adadad;
+  border-color: #77e5b8 !important;
 }
 
 #navbarTop
