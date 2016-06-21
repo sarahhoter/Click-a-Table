@@ -172,6 +172,11 @@ height:90px;
     color: black;
 }
 
+.course-item{
+	float: right;
+	padding:5px;
+}
+
 .course-details {
     border: #4385cb 1px solid;
     max-width: none !important;
