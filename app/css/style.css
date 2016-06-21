@@ -232,6 +232,11 @@ height:90px;
     background: #4e5663;
 }
 
+
+.register-title{
+  color: #ffe7c6;
+}
+
 .courses{
 	min-width :540px !important;
 }
