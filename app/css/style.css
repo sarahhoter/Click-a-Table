@@ -17,6 +17,10 @@ body {
     direction: rtl;
 }
 
+.btn-default{
+border-color: #178bff;
+}
+
 .navbar-inverse .navbar-nav > li > a
 {
      color: #0f2638 !important;
